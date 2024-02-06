@@ -14,8 +14,8 @@ export default function SingIn(){
     return (
         <CardCenter> 
             <Input label="Email" onChange={(e)=>{setEmail(e.target.value)}} value={email}/>
-            <Input hiddenValue={visibillityPwd} value={firstPassword} label="Senha" onChange={(e)=>setFirstPassword(e.target.value)}/>
-            <Input hiddenValue={visibillityPwd} value={secondPassword} label="Confirmar Senha" onChange={(e)=>setSecondPassword(e.target.value)}/>
+            <Input isPassword={true} value={firstPassword} label="Senha" onChange={(e)=>setFirstPassword(e.target.value)}/>
+            <Input isPassword={true} value={secondPassword} label="Confirmar Senha" onChange={(e)=>setSecondPassword(e.target.value)}/>
             <Button onClick={()=> setVisibillityPwd(!visibillityPwd)}> Change visibillity </Button>
         </CardCenter>
     )
