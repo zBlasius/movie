@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Image } from "react-bootstrap";
+import "./css/input.scss"
 
 export default function Input({ label, onChange, value, isPassword }: {
     label?: string,
@@ -18,14 +19,9 @@ export default function Input({ label, onChange, value, isPassword }: {
                     type={hiddenValue ? "password" : "text"}
                     value={value}
                     onChange={(e) => onChange(e)}
-                    className="form-control form-control-lg"
+                    className="form-control form-control-lg input-text"
                 />
-                {isPassword &&
-                    <Image
-                        style={{ height: "5%", color: 'white', background: 'white', borderRadius: 20, cursor:'pointer' }}
-                        src="/visibility-icon.svg"
-                        onClick={() => setHiddenValue(!hiddenValue)}
-                    />}
+                <div style={{width:45, height:45, position:'absolute', right:'9%', cursor:'pointer'}} onClick={()=> setHiddenValue(!hiddenValue)}>  </div>
             </div>
         </div>
     )
