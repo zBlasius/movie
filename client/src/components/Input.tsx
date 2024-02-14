@@ -11,7 +11,7 @@ export default function Input({ label, onChange, value, isPassword }: {
     const [hiddenValue, setHiddenValue] = useState(true)
 
     return (
-        <div className="form-outline form-white mb-4 input-sign">
+        <div className="form-outline form-white mb-4 input-sign text-justify">
             {label && <label className="form-label" > {label} </label>}
 
             <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: 5 }} className="input-style">
@@ -19,9 +19,9 @@ export default function Input({ label, onChange, value, isPassword }: {
                     type={hiddenValue ? "password" : "text"}
                     value={value}
                     onChange={(e) => onChange(e)}
-                    className="form-control form-control-lg input-text"
+                    className={`form-control form-control-lg ${isPassword && "input-text"}`}
                 />
-                <div style={{width:45, height:45, position:'absolute', right:'9%', cursor:'pointer'}} onClick={()=> setHiddenValue(!hiddenValue)}>  </div>
+                {isPassword && <div style={{width:45, height:45, position:'absolute', right:'9%', cursor:'pointer'}} onClick={()=> setHiddenValue(!hiddenValue)}>  </div>}
             </div>
         </div>
     )

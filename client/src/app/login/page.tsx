@@ -8,6 +8,14 @@ import Input from '@/components/Input';
 
 export default function Login() {
 
+    function Login({user, password} : {
+        user: string,
+        password:string
+    }){
+
+        
+    }
+
     return (
         <CardCenter>
 
